@@ -9,15 +9,15 @@ function loading() {
      loader.classList.remove("loading");
 }
 
-const callThis = "https://api.rawg.io/api/games?dates=2019-01-01,2019-12-31&ordering=-rating&key=895d17560af54d70b643e49e71410c25";
+const apiUrl = "https://api.rawg.io/api/games?dates=2019-01-01,2019-12-31&ordering=-rating&key=895d17560af54d70b643e49e71410c25";
 const content = document.querySelector(".content");
 
-async function makeMyCall() {
+async function fetchGames() {
 
     loading()
 
     try {
-        const response = await fetch(callThis);
+        const response = await fetch(apiUrl);
         const data = await response.json();
 
         notLoading()
@@ -38,12 +38,10 @@ async function makeMyCall() {
             content.innerHTML += `<div>Name: ${games[i].name} | Rating: ${games[i].rating} | Tags: ${games[i].tags.length}</div>`;
         }
         
-        
-
     } catch(error) {
         console.log(error);
         content.innerHTML = "An error has occured";
     }
 };
 
-button.onclick = makeMyCall;
+button.addEventListener("click", fetchGames);

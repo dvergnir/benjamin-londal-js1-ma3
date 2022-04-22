@@ -20,6 +20,10 @@ button {
     margin-bottom: 20px;
 }
 
+.content {
+    font-size: 2em;
+}
+
 @keyframes loading {
     to {
         transform: rotate(1turn);
