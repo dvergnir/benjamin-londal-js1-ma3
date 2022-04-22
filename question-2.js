@@ -31,7 +31,7 @@ async function fetchGames() {
         for(var i = 0; i < games.length; i++) {
             console.log(games);
 
-            if (i === 7) {
+            if (i === 8) {
                 break;
             }
 
