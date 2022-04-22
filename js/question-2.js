@@ -35,7 +35,7 @@ async function makeMyCall() {
                 break;
             }
 
-            content.innerHTML += `<div>${games[i].name}</div>`;
+            content.innerHTML += `<div>Name: ${games[i].name} | Rating: ${games[i].rating} | Tags: ${games[i].tags.length}</div>`;
         }
         
         
